@@ -36,22 +36,14 @@ const Navbar = () => {
             animate={{ y: 0 }}
             transition={{ duration: 0.5 }}
             className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
-                ? 'glass-strong shadow-lg py-3'
-                : 'bg-transparent py-4'
+                    ? 'glass-strong shadow-lg py-3'
+                    : 'bg-transparent py-4'
                 }`}
         >
             <div className="max-w-7xl mx-auto px-4 sm:px-6">
-                <div className="flex items-center justify-between">
-                    {/* Logo */}
-                    <motion.div
-                        whileHover={{ scale: 1.05 }}
-                        className="text-xl sm:text-2xl font-bold text-gradient font-display"
-                    >
-                        M. Asjad Kashif
-                    </motion.div>
-
-                    {/* Desktop Menu */}
-                    <div className="hidden md:flex items-center space-x-8">
+                <div className="flex items-center justify-center relative">
+                    {/* Desktop Center Menu */}
+                    <div className="hidden md:flex items-center space-x-10">
                         {navItems.map((item, index) => (
                             <motion.a
                                 key={item.name}
@@ -72,10 +64,10 @@ const Navbar = () => {
                         ))}
                     </div>
 
-                    {/* Mobile Button */}
+                    {/* Mobile Menu Button */}
                     <button
                         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                        className="md:hidden text-white text-2xl p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        className="md:hidden absolute right-0 text-white text-2xl p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                         aria-label="Toggle menu"
                     >
                         {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
@@ -88,12 +80,12 @@ const Navbar = () => {
                 {isMobileMenuOpen && (
                     <motion.div
                         initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: 'auto', opacity: 1 }}
+                        animate={{ height: '100svh', opacity: 1 }}
                         exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.3 }}
-                        className="md:hidden bg-black/70 backdrop-blur-lg border-t border-white/10"
+                        transition={{ duration: 0.35 }}
+                        className="md:hidden bg-black/80 backdrop-blur-xl overflow-y-auto"
                     >
-                        <div className="px-6 py-6 space-y-5 text-center">
+                        <div className="flex flex-col items-center justify-center min-h-full py-24 space-y-6 text-center">
                             {navItems.map((item) => (
                                 <motion.a
                                     key={item.name}
@@ -103,7 +95,7 @@ const Navbar = () => {
                                         e.preventDefault()
                                         handleNavClick(item.href)
                                     }}
-                                    className="block text-lg font-medium text-white/90 hover:text-white"
+                                    className="text-2xl font-semibold text-white/90 hover:text-white"
                                 >
                                     {item.name}
                                 </motion.a>
