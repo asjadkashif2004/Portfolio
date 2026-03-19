@@ -31,7 +31,7 @@ const Hero = () => {
 
     const socialLinks = [
         { icon: FaGithub, href: 'https://github.com/asjadkashif2004', label: 'GitHub' },
-        { icon: FaLinkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
+  
         { icon: FaEnvelope, href: 'asjadkashif2004@gmail.com', label: 'Email' },
     ]
 

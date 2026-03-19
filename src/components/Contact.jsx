@@ -38,22 +38,12 @@ const Contact = () => {
     const socialLinks = [
         {
             icon: FaGithub,
-            href: 'https://github.com/yourusername',
+            href: 'https://github.com/asjadkashif2004',
             label: 'GitHub',
             color: 'from-gray-400 to-gray-600',
         },
-        {
-            icon: FaLinkedinIn,
-            href: 'https://linkedin.com/in/yourusername',
-            label: 'LinkedIn',
-            color: 'from-blue-500 to-blue-700',
-        },
-        {
-            icon: FaXTwitter,
-            href: 'https://twitter.com/yourusername',
-            label: 'Twitter / X',
-            color: 'from-slate-400 to-slate-600',
-        },
+       
+     
         {
             icon: SiGmail,
             href: 'mailto:asjadkashif2004@gmail.com',

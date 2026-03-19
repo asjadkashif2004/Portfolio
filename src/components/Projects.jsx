@@ -18,8 +18,7 @@ const Projects = () => {
             title: 'Galaxy Glide',
             description:
                 'A groundbreaking project developed for NASA Space Apps Hackathon, where I achieved Runner-Up position.',
-            problem:
-                'Embiggen Your Eyes',
+            problem: 'Embiggen Your Eyes',
             solution:
                 'Developed a website able to store the large images of NASA dataset at real time and provide high zooming quality without pixilation.',
             technologies: ['Laravel', 'PHP', 'MySQL', 'NASA APIs'],
@@ -28,7 +27,37 @@ const Projects = () => {
             github: 'https://github.com/asjadkashif2004/Galaxy-Glide-Web-App',
             featured: true,
             icon: FaStar,
+            thumbnail: '/images/galaxy.png', // Add your image in public/images/
         },
+        {
+            title: 'Deishop',
+            description:
+                'E-commerce website developed using React and Tailwind',
+            problem: 'Need for a modern and responsive online shopping platform.',
+            solution:
+                'Built a responsive e-commerce frontend with product browsing, cart system, and clean UI using React and Tailwind.',
+            technologies: ['React', 'JavaScript', 'Tailwind', 'API'],
+            color: 'from-green-400 to-cyan-500',
+            github: 'https://github.com/asjadkashif2004/Deishop-',
+            Live: 'https://deishop.vercel.app/',
+            icon: FaCode,
+            thumbnail: '/images/deishop.png',
+        },
+         {
+    title: 'Aura-X Architect',
+    description:
+        'A modern website developed for an architecture business to showcase projects, services, and company profile.',
+    problem:
+        'Architecture firms needed a professional online presence to attract clients and display their portfolio.',
+    solution:
+        'Built a responsive website using React and Tailwind CSS with interactive project galleries, service sections, and contact forms.',
+    technologies: ['React', 'Tailwind', 'JavaScript', 'CSS'],
+    color: 'from-blue-400 to-purple-500',
+    github: 'https://github.com/asjadkashif2004/Aura-x-Architect', // Replace with actual repo
+    Live: 'https://aura-x-architects.vercel.app/', // Replace with actual deployment URL
+    icon: FaCode,
+    thumbnail: '/images/aura-x.png', // Add this image to public/images
+},
         {
             title: 'Complaint Lodge System',
             description:
@@ -40,9 +69,11 @@ const Projects = () => {
             technologies: ['Laravel', 'PHP', 'MySQL', 'JavaScript'],
             color: 'from-red-400 to-pink-500',
             github: 'https://github.com/asjadkashif2004/Complain-Lodge-Systsem--Web-App',
-
             icon: FaCode,
+            thumbnail: '/images/complain.png',
         },
+
+       
         {
             title: 'Course HUB',
             description:
@@ -54,8 +85,8 @@ const Projects = () => {
             technologies: ['Laravel', 'PHP', 'MySQL'],
             color: 'from-red-400 to-pink-500',
             github: 'https://github.com/asjadkashif2004/Course-Managment-Web-app-',
-
             icon: FaCode,
+            thumbnail: '/images/course_hub.png',
         },
         {
             title: 'Exam Seating Management System',
@@ -68,35 +99,32 @@ const Projects = () => {
             technologies: ['Laravel', 'MySQL', 'Algorithms'],
             color: 'from-red-400 to-pink-500',
             github: 'https://github.com/asjadkashif2004/Exam-Seating-Managment-System--Web-Engr-Project',
-
             icon: FaCode,
+            thumbnail: '/images/exam.png',
         },
         {
             title: 'Smart Inventory System',
-            description:
-                'A Flask-based inventory management solution.',
-            problem:
-                'Businesses needed efficient inventory tracking and analytics.',
+            description: 'A Flask-based inventory management solution.',
+            problem: 'Businesses needed efficient inventory tracking and analytics.',
             solution:
                 'Built a system with real-time inventory tracking and reporting.',
             technologies: ['Flask', 'Python', 'MySQL'],
             color: 'from-yellow-400 to-orange-500',
             github: 'https://github.com/asjadkashif2004/Smart-Inventory-System---Website',
             icon: FaCode,
+            thumbnail: '/images/smart.png',
         },
-
         {
             title: 'MAK Store',
-            description:
-                'A Flutter-based mobile e-commerce application.',
-            problem:
-                'Need for a native mobile shopping experience.',
+            description: 'A Flutter-based mobile e-commerce application.',
+            problem: 'Need for a native mobile shopping experience.',
             solution:
                 'Created a full-featured mobile app with authentication and cart.',
             technologies: ['Flutter', 'Firebase'],
             color: 'from-blue-400 to-cyan-500',
-            github: 'https://github.com/asjadkashif2004/Smart-Inventory-System---Website',
+            github: 'https://github.com/asjadkashif2004/Mak-Store-E-commerce-mobile-app',
             icon: FaCode,
+            thumbnail: '/images/mak.png',
         },
     ]
 
@@ -154,6 +182,17 @@ const Projects = () => {
                             className={`glass-strong rounded-2xl p-6 hover:scale-105 transition-all duration-300 ${project.featured ? 'md:col-span-2 lg:col-span-3' : ''
                                 }`}
                         >
+                            {/* Thumbnail */}
+                            {project.thumbnail && (
+                                <div className="mb-4">
+                                    <img
+                                        src={project.thumbnail}
+                                        alt={`${project.title} Thumbnail`}
+                                        className="w-full h-48 object-cover rounded-2xl shadow-lg transform hover:scale-105 transition-transform duration-300"
+                                    />
+                                </div>
+                            )}
+
                             {project.badge && (
                                 <div className="mb-4 inline-block px-3 py-1 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full text-xs font-bold text-white">
                                     {project.badge}
@@ -202,11 +241,22 @@ const Projects = () => {
                                     <FaGithub />
                                     Code
                                 </a>
+
+                                {project.Live && (
+                                    <a
+                                        href={project.Live}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="flex items-center gap-2 px-4 py-2 glass rounded-lg text-white hover:text-green-400 transition-colors"
+                                    >
+                                        <FaExternalLinkAlt />
+                                        Live
+                                    </a>
+                                )}
                             </div>
                         </motion.div>
                     ))}
                 </motion.div>
-
             </div>
         </section>
     )
